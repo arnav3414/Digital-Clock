@@ -1,0 +1,119 @@
+body {
+    font-family: 'Digital-7', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
+body.dark {
+    background-color: #1c1c1c;
+    color: white;
+}
+#clock {
+    font-size: 100px;
+    color: #61de0d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(155, 25, 25, 0.2);
+    transition: box-shadow 0.5s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+}
+#clock:hover {
+    box-shadow: 0 0 40px rgba(135, 0, 238, 0.8);
+    cursor: pointer;
+}
+.shape {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #d9f509;
+    border-radius: 50%;
+    animation: moveBubbles 7s linear infinite;
+    left: 10%;
+}
+@keyframes moveBubbles {
+    0% { bottom: -50px; opacity: 0; }
+    50% { opacity: 1; }
+    100% { bottom: 100%; opacity: 0; }
+}
+.shape:hover {
+    background-color: #61de0d;
+    cursor: pointer;
+}
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+.content h2 {
+    color: #ce0000;
+    font-size: 2em;
+    font-weight: 500;
+}
+.content h2 span {
+    font-size: 2.8em;
+    font-weight: 600;
+}
+.animated-text {
+    margin-left: 20px;
+    height: 70px;
+    overflow: hidden;
+}
+.animated-text h3 {
+    color: #4e9eff;
+    font-size: 3em;
+    font-weight: 600;
+    line-height: 55px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.animated-text h3:hover {
+    color: #ff4f4f;
+}
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #61de0d;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.theme-toggle:hover {
+    background-color: #4caf50;
+}
+@media (max-width: 600px) {
+    #clock {
+        font-size: 50px;
+        top: 20%;
+        left: 50%;
+    }
+    .main .content {
+        padding: 10px;
+        margin-top: 100px;
+    }
+    .animated-text h3 {
+        font-size: 1.5em;
+        line-height: 40px;
+    }
+    .shape {
+        width: 25px;
+        height: 25px;
+    }
+    .theme-toggle {
+        padding: 8px 12px;
+        top: 10px;
+        right: 20px;
+    }
+}
