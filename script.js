@@ -5,8 +5,9 @@ function updateClock() {
     const seconds = now.getSeconds().toString().padStart(2, '0');
     const ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12;
-    hours = hours || 12;
-    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+    hours = hours ? hours : 12; 
+    const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+    document.getElementById('clock').textContent = timeString;
 }
 
 setInterval(updateClock, 1000);
@@ -28,7 +29,7 @@ function onClickText(textElement, text) {
 const shapes = document.querySelectorAll('.shape');
 shapes.forEach(shape => {
     shape.addEventListener('click', () => {
-        shape.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        shape.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
         shape.style.transform = `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px)`;
     });
 });

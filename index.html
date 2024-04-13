@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  </head>
+
+  <body>
     <div id="clock" onclick="changeColor()"></div>
-    <section class="main">
-        <div class="content">
-            <h2>Hello, I'm<br><span>Arnav Sharma</span></h2>
-            <div class="animated-text">
-                <h3 onclick="onClickText(this, 'Yesterday is the past, tomorrow is')">Yesterday's the past, tomorrow's</h3>
-                <h3 onclick="onClickText(this, 'the future, but today is a gift.')">the future, but today is a gift.</h3>
-                <h3 onclick="onClickText(this, 'That is why it is called the present.')">That's why it's called the present.</h3>
-            </div>
+    <section class="main" id="main">
+      <div class="content">
+        <h2>Hello, I'm<br><span>Arnav Sharma</span></h2>
+        <div class="animated-text">
+          <h3
+            onclick="onClickText(this, 'Yesterday is the past, tomorrow is')">Yesterday's
+            the past, tomorrow's</h3>
+          <h3
+            onclick="onClickText(this, 'the future, but today is a gift.')">the
+            future, but today is a gift.</h3>
+          <h3
+            onclick="onClickText(this, 'That is why it is called the present.')">That's
+            why it's called the present.</h3>
         </div>
+      </div>
     </section>
-    <div class="shape" style="animation: moveBubbles 7s linear infinite; left: 10%;"></div>
-    <div class="shape" style="animation: moveBubbles 9s linear infinite; left: 20%;"></div>
-    <div class="shape" style="animation: moveBubbles 11s linear infinite; left: 30%;"></div>
-    <div class="shape" style="animation: moveBubbles 13s linear infinite; left: 40%;"></div>
-    <div class="shape" style="animation: moveBubbles 15s linear infinite; left: 50%;"></div>
-    <div class="shape" style="animation: moveBubbles 17s linear infinite; left: 60%;"></div>
-    <div class="shape" style="animation: moveBubbles 19s linear infinite; left: 70%;"></div>
-    <div class="shape" style="animation: moveBubbles 21s linear infinite; left: 80%;"></div>
-    <div class="shape" style="animation: moveBubbles 23s linear infinite; left: 90%;"></div>
-    <div class="shape" style="animation: moveBubbles 25s linear infinite; left: 100%;"></div>
+    <div class="shape"
+      style="animation: moveBubbles 7s linear infinite; left: 10%;"></div>
+    <div class="shape"
+      style="animation: moveBubbles 9s linear infinite; left: 20%;"></div>
+    <div class="shape"
+      style="animation: moveBubbles 11s linear infinite; left: 30%;"></div>
+    <div class="shape"
+      style="animation: moveBubbles 13s linear infinite; left: 40%;"></div>
+    <div class="shape"
+      style="animation: moveBubbles 15s linear infinite; left: 50%;"></div>
+    <div class="shape"
+      style="animation: moveBubbles 17s linear infinite; left: 60%;"></div>
+    <div class="shape"
+      style="animation: moveBubbles 19s linear infinite; left: 70%;"></div>
+    <div class="shape"
+      style="animation: moveBubbles 21s linear infinite; left: 80%;"></div>
+    <div class="shape"
+      style="animation: moveBubbles 23s linear infinite; left: 90%;"></div>
+    <div class="shape"
+      style="animation: moveBubbles 25s linear infinite; left: 100%;"></div>
+
     <button class="theme-toggle" onclick="toggleTheme()">Mode</button>
-    <script src="scripts.js"></script>
-</body>
+
+    <script src="script.js"></script>
+  </body>
+
 </html>

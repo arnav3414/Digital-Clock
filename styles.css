@@ -6,13 +6,16 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
     position: relative;
     transition: background-color 0.3s ease-in-out;
 }
+
 body.dark {
     background-color: #1c1c1c;
     color: white;
 }
+
 #clock {
     font-size: 100px;
     color: #61de0d;
@@ -24,93 +27,161 @@ body.dark {
     top: 50%;
     left: 63%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }
+
 #clock:hover {
     box-shadow: 0 0 40px rgba(135, 0, 238, 0.8);
     cursor: pointer;
 }
+
 .shape {
     position: absolute;
     width: 50px;
     height: 50px;
     background-color: #d9f509;
     border-radius: 50%;
-    animation: moveBubbles 7s linear infinite;
-    left: 10%;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    transition: background-color 0.3s ease;
 }
+
 @keyframes moveBubbles {
-    0% { bottom: -50px; opacity: 0; }
-    50% { opacity: 1; }
-    100% { bottom: 100%; opacity: 0; }
+    0% {
+        bottom: -50px;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 100%;
+        opacity: 0;
+    }
 }
+
 .shape:hover {
     background-color: #61de0d;
     cursor: pointer;
 }
+
 .main {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     position: relative;
+    z-index: 0;
+    left: -1%;
 }
-.content h2 {
+
+.main .content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.main .content h2 {
     color: #ce0000;
     font-size: 2em;
     font-weight: 500;
+    margin: 0;
 }
-.content h2 span {
+
+.main .content h2 span {
     font-size: 2.8em;
     font-weight: 600;
 }
+
 .animated-text {
     margin-left: 20px;
+    position: relative;
     height: 70px;
     overflow: hidden;
 }
+
 .animated-text h3 {
     color: #4e9eff;
     font-size: 3em;
     font-weight: 600;
     line-height: 55px;
     letter-spacing: 1px;
+    margin: 0;
     transition: color 0.3s ease-in-out;
     cursor: pointer;
 }
+
 .animated-text h3:hover {
     color: #ff4f4f;
 }
+
+.animated-text h3:nth-child(1) {
+    animation: text-move 10s infinite;
+}
+
+@keyframes text-move {
+    0% {
+        margin-top: 0;
+    }
+
+    25% {
+        margin-top: -60px;
+    }
+
+    50% {
+        margin-top: -150px;
+    }
+
+    75% {
+        margin-top: -60px;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
+
 .theme-toggle {
     position: absolute;
     top: 20px;
     right: 20px;
     padding: 10px 15px;
+    border: none;
     border-radius: 5px;
     background-color: #61de0d;
     color: #000;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
+
 .theme-toggle:hover {
     background-color: #4caf50;
 }
+
 @media (max-width: 600px) {
     #clock {
         font-size: 50px;
         top: 20%;
         left: 50%;
     }
+
     .main .content {
         padding: 10px;
         margin-top: 100px;
     }
+
     .animated-text h3 {
         font-size: 1.5em;
         line-height: 40px;
     }
+
     .shape {
         width: 25px;
         height: 25px;
     }
+
     .theme-toggle {
         padding: 8px 12px;
         top: 10px;
